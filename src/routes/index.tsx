@@ -173,7 +173,7 @@ function Hero() {
         <div className="max-w-[42rem]">
           <p className="flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
             <span className="h-px w-7 bg-accent" />
-            Desde 1994 · Mairinque · SP
+            Tradição desde os anos 90 · Mairinque · SP
           </p>
 
           <h1 className="mt-7 text-[2.4rem] leading-[1.06] text-primary-foreground sm:text-[3.1rem] lg:text-[3.9rem]">
@@ -390,7 +390,7 @@ function QuemSomos() {
             src={cobertura.url}
             alt="Cobertura em madeira executada pela equipe da Pau Brasil"
             loading="lazy"
-            className="absolute -bottom-8 -right-2 hidden h-[210px] w-[180px] border-[6px] border-background object-cover lg:block"
+            className="absolute -bottom-10 -right-10 hidden h-[210px] w-[180px] border-[6px] border-background object-cover lg:block"
           />
         </div>
 
@@ -463,7 +463,7 @@ function Diferenciais() {
 
         <div className="mt-14 grid gap-px bg-border md:grid-cols-3">
           {diferenciais.map(({ numero, titulo, texto }) => (
-            <div key={numero} className="bg-secondary p-8 md:p-10 md:first:pl-0 lg:first:pl-10">
+            <div key={numero} className="bg-secondary p-8 md:p-10">
               <span className="font-display text-[2.75rem] leading-none text-accent">
                 {numero}
               </span>
