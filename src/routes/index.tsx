@@ -173,7 +173,7 @@ function Hero() {
         <div className="max-w-[42rem]">
           <p className="flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
             <span className="h-px w-7 bg-accent" />
-            Tradição desde os anos 90 · Mairinque · SP
+            Móveis &amp; projetos em madeira · Mairinque · SP
           </p>
 
           <h1 className="mt-7 text-[2.4rem] leading-[1.06] text-primary-foreground sm:text-[3.1rem] lg:text-[3.9rem]">
