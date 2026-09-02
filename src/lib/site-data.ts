@@ -1,15 +1,15 @@
-import mesa from "@/assets/mesa.asset.json";
-import mesaCentro from "@/assets/mesa_centro.asset.json";
+import mesa from "@/assets/mesa-nova.asset.json";
+import sofaCouro from "@/assets/sofa-couro.asset.json";
 import balanco from "@/assets/balanco.asset.json";
 import namoradeira from "@/assets/namoradeira.asset.json";
-import poltrona from "@/assets/poltrona.asset.json";
+import poltrona from "@/assets/poltrona-nova.asset.json";
 import espreguicadeira from "@/assets/espreguicadeira-madeira.asset.json";
-import aparador from "@/assets/aparador.asset.json";
+import aparador from "@/assets/aparador-novo.asset.json";
 import buffet from "@/assets/buffet.asset.json";
 import fruteira from "@/assets/fruteira.asset.json";
 
-import pergolado from "@/assets/pergoladoserradoservicos.asset.json";
-import deck from "@/assets/deckservicos.asset.json";
+import pergolado from "@/assets/pergolado-novo.asset.json";
+import deck from "@/assets/deck-novo.asset.json";
 import quiosque from "@/assets/quiosqueservicos.asset.json";
 import quiosqueTelha from "@/assets/quiosquetelhaservicos.asset.json";
 import assoalho from "@/assets/assoalhoservicos.asset.json";
@@ -37,9 +37,9 @@ export const moveis: CardItem[] = [
     imagem: mesa.url,
   },
   {
-    titulo: "Pranchas Orgânicas",
-    descricao: "Peças exclusivas com veios naturais para ambientes com personalidade.",
-    imagem: mesaCentro.url,
+    titulo: "Sofás em Couro",
+    descricao: "Couro natural e estrutura em madeira maciça para um estar acolhedor.",
+    imagem: sofaCouro.url,
   },
   {
     titulo: "Conjuntos de Varanda",
@@ -85,14 +85,14 @@ export const estruturas: CardItem[] = [
     imagem: pergolado.url,
   },
   {
-    titulo: "Quiosques",
-    descricao: "Cobertura em palha natural e estrutura maciça para receber o ano inteiro.",
-    imagem: quiosque.url,
-  },
-  {
     titulo: "Decks",
     descricao: "Piso externo em madeira de alta densidade, pronto para sol e chuva.",
     imagem: deck.url,
+  },
+  {
+    titulo: "Quiosques",
+    descricao: "Cobertura em palha natural e estrutura maciça para receber o ano inteiro.",
+    imagem: quiosque.url,
   },
   {
     titulo: "Quiosque com Telha",

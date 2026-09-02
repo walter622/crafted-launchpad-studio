@@ -13,8 +13,8 @@ import {
 
 import logo from "@/assets/pau-brasil-logo.png.asset.json";
 import logoBranco from "@/assets/pau-brasil-logo-branco.png.asset.json";
-import hero from "@/assets/hero.asset.json";
-import mesa from "@/assets/mesa.asset.json";
+import hero from "@/assets/hero-novo.asset.json";
+import mesaCentro from "@/assets/mesa_centro.asset.json";
 import cobertura from "@/assets/coberturaservicos.asset.json";
 import { Carousel } from "@/components/site/Carousel";
 import { estruturas, faq, moveis, PHONE_DISPLAY, whatsappLink } from "@/lib/site-data";
@@ -280,7 +280,7 @@ function Moveis() {
         <div className="mt-14 flex flex-col gap-6 border-t border-border pt-10 sm:flex-row sm:items-center sm:justify-between">
           <p className="max-w-[34rem] text-sm leading-relaxed text-muted-foreground">
             <span className="font-medium text-foreground">Também no showroom:</span> sofás em couro
-            legítimo com estrutura em madeira maciça, cristaleiras e móveis para espaço gourmet.
+            com estrutura em madeira maciça, cristaleiras e móveis para espaço gourmet.
           </p>
           <BotaoWhats href={CTA_MOVEIS} variante="light">
             Receber fotos e medidas
@@ -361,8 +361,8 @@ function QuemSomos() {
       <div className="mx-auto grid max-w-[1240px] items-center gap-14 px-5 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20 lg:px-10">
         <div className="relative">
           <img
-            src={mesa.url}
-            alt="Mesa de jantar em madeira maciça nobre no showroom da Pau Brasil"
+            src={mesaCentro.url}
+            alt="Prancha orgânica em madeira nobre produzida pela Pau Brasil"
             loading="lazy"
             className="h-[420px] w-full object-cover sm:h-[520px]"
           />
