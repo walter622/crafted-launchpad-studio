@@ -5,9 +5,11 @@ import type { CardItem } from "@/lib/site-data";
 type Props = {
   itens: CardItem[];
   ariaLabel: string;
+  tema?: "claro" | "escuro";
 };
 
-export function Carousel({ itens, ariaLabel }: Props) {
+export function Carousel({ itens, ariaLabel, tema = "claro" }: Props) {
+  const escuro = tema === "escuro";
   const trackRef = useRef<HTMLDivElement>(null);
   const [inicio, setInicio] = useState(true);
   const [fim, setFim] = useState(false);
