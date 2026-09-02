@@ -49,7 +49,7 @@ export function Carousel({ itens, ariaLabel, tema = "claro" }: Props) {
             key={item.titulo}
             className="group w-[76vw] max-w-[320px] sm:w-[300px] lg:w-[326px]"
           >
-            <div className="relative overflow-hidden bg-secondary">
+            <div className="relative overflow-hidden rounded-xl bg-secondary">
               <img
                 src={item.imagem}
                 alt={item.titulo}
@@ -61,7 +61,11 @@ export function Carousel({ itens, ariaLabel, tema = "claro" }: Props) {
                 {item.titulo}
               </h3>
             </div>
-            <p className="mt-4 max-w-[30ch] text-sm leading-relaxed text-muted-foreground">
+            <p
+              className={`mt-4 max-w-[30ch] text-sm leading-relaxed ${
+                escuro ? "text-primary-foreground/65" : "text-muted-foreground"
+              }`}
+            >
               {item.descricao}
             </p>
           </article>
