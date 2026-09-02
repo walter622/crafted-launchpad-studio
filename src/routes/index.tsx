@@ -75,7 +75,7 @@ function BotaoWhats({
   variante?: "solid" | "light";
 }) {
   const base =
-    "group inline-flex items-center gap-3 px-7 py-4 text-[15px] font-semibold tracking-tight transition-all duration-300";
+    "cta-pulse group inline-flex items-center gap-3 rounded-xl px-7 py-4 text-[15px] font-semibold tracking-tight transition-all duration-300";
   const estilo =
     variante === "solid"
       ? "bg-primary text-primary-foreground shadow-lift hover:bg-primary-deep"
@@ -101,6 +101,7 @@ function LandingPage() {
         <Diferenciais />
         <Faq />
         <Fechamento />
+        <Mapa />
       </main>
       <Rodape />
       <BarraMobile />
@@ -136,7 +137,7 @@ function Cabecalho() {
             href={CTA_HERO}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-deep"
+            className="cta-pulse inline-flex items-center gap-2.5 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-deep"
           >
             <WhatsAppIcon className="size-4" />
             Falar com um consultor
@@ -147,7 +148,7 @@ function Cabecalho() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Falar no WhatsApp"
-          className="flex size-10 items-center justify-center bg-primary text-primary-foreground lg:hidden"
+          className="cta-pulse flex size-10 items-center justify-center rounded-xl bg-primary text-primary-foreground lg:hidden"
         >
           <WhatsAppIcon className="size-5" />
         </a>
@@ -171,12 +172,7 @@ function Hero() {
 
       <div className="relative mx-auto max-w-[1240px] px-5 py-24 lg:px-10 lg:py-36">
         <div className="max-w-[42rem]">
-          <p className="flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
-            <span className="h-px w-7 bg-accent" />
-            Móveis &amp; projetos em madeira · Mairinque · SP
-          </p>
-
-          <h1 className="mt-7 text-[2.4rem] leading-[1.06] text-primary-foreground sm:text-[3.1rem] lg:text-[3.9rem]">
+          <h1 className=" text-[2.4rem] leading-[1.06] text-primary-foreground sm:text-[3.1rem] lg:text-[3.9rem]">
             O luxo e a nobreza da{" "}
             <span className="italic text-accent">madeira maciça</span> para transformar a sua
             casa.
@@ -267,8 +263,7 @@ function Moveis() {
       <div className="mx-auto max-w-[1240px] px-5 lg:px-10">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-[34rem]">
-            <p className="eyebrow">Pronta-entrega</p>
-            <h2 className="mt-5 text-[2rem] leading-[1.12] sm:text-[2.5rem]">
+            <h2 className=" text-[2rem] leading-[1.12] sm:text-[2.5rem]">
               Móveis em madeira maciça nobre a pronta-entrega.
             </h2>
           </div>
@@ -304,11 +299,7 @@ function Estruturas() {
       <div className="mx-auto max-w-[1240px] px-5 lg:px-10">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-[36rem]">
-            <p className="flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
-              <span className="h-px w-7 bg-accent" />
-              Arquitetura de exteriores
-            </p>
-            <h2 className="mt-5 text-[2rem] leading-[1.12] text-primary-foreground sm:text-[2.5rem]">
+            <h2 className=" text-[2rem] leading-[1.12] text-primary-foreground sm:text-[2.5rem]">
               Projetos e estruturas em madeira sob medida.
             </h2>
           </div>
@@ -317,23 +308,12 @@ function Estruturas() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-          {estruturas.map((item) => (
-            <article key={item.titulo} className="group">
-              <div className="overflow-hidden">
-                <img
-                  src={item.imagem}
-                  alt={item.titulo}
-                  loading="lazy"
-                  className="h-[300px] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
-                />
-              </div>
-              <h3 className="mt-5 text-lg text-primary-foreground">{item.titulo}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-primary-foreground/65">
-                {item.descricao}
-              </p>
-            </article>
-          ))}
+        <div className="mt-14">
+          <Carousel
+            itens={estruturas}
+            ariaLabel="Projetos e estruturas em madeira"
+            tema="escuro"
+          />
         </div>
 
         <div className="mt-16 flex flex-col items-start gap-6 border-t border-primary-foreground/15 pt-10 sm:flex-row sm:items-center sm:justify-between">
@@ -395,8 +375,7 @@ function QuemSomos() {
         </div>
 
         <div>
-          <p className="eyebrow">Quem é a Pau Brasil</p>
-          <h2 className="mt-5 text-[2rem] leading-[1.12] sm:text-[2.5rem]">
+          <h2 className=" text-[2rem] leading-[1.12] sm:text-[2.5rem]">
             Três décadas dedicadas à madeira nobre brasileira.
           </h2>
           <p className="mt-6 max-w-[38rem] text-[15px] leading-relaxed text-muted-foreground">
@@ -452,8 +431,7 @@ function Diferenciais() {
     <section className="bg-secondary py-20 lg:py-28">
       <div className="mx-auto max-w-[1240px] px-5 lg:px-10">
         <div className="max-w-[40rem]">
-          <p className="eyebrow">Por que escolher a Pau Brasil</p>
-          <h2 className="mt-5 text-[2rem] leading-[1.12] sm:text-[2.5rem]">
+          <h2 className=" text-[2rem] leading-[1.12] sm:text-[2.5rem]">
             A diferença está na nobreza da madeira e no cuidado artesanal.
           </h2>
           <p className="mt-6 text-[15px] leading-relaxed text-muted-foreground">
@@ -484,8 +462,7 @@ function Faq() {
     <section id="faq" className="py-20 lg:py-28">
       <div className="mx-auto grid max-w-[1240px] gap-12 px-5 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:px-10">
         <div>
-          <p className="eyebrow">Dúvidas frequentes</p>
-          <h2 className="mt-5 text-[2rem] leading-[1.12] sm:text-[2.4rem]">
+          <h2 className=" text-[2rem] leading-[1.12] sm:text-[2.4rem]">
             Perguntas frequentes
           </h2>
           <p className="mt-6 max-w-[24rem] text-[15px] leading-relaxed text-muted-foreground">
@@ -565,6 +542,37 @@ function Fechamento() {
   );
 }
 
+
+/* ---------------------------------------------------------------------- mapa */
+
+function Mapa() {
+  return (
+    <section aria-label="Localização do showroom em Mairinque" className="bg-background">
+      <div className="mx-auto max-w-[1240px] px-5 py-16 lg:px-10 lg:py-20">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <h2 className="max-w-[28rem] text-[1.75rem] leading-[1.15] sm:text-[2.15rem]">
+            Venha nos visitar em Mairinque.
+          </h2>
+          <p className="max-w-[24rem] text-[15px] leading-relaxed text-muted-foreground">
+            Rod. Pres. Castello Branco, Km 65 (sentido interior) — a 2 minutos do Catarina Fashion
+            Outlet.
+          </p>
+        </div>
+
+        <div className="mt-10 overflow-hidden rounded-xl border border-border">
+          <iframe
+            title="Mapa do showroom Pau Brasil em Mairinque"
+            src="https://www.google.com/maps?q=Pau+Brasil+M%C3%B3veis+R%C3%BAsticos+Rodovia+Presidente+Castello+Branco+Km+65+Mairinque+SP&z=14&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="h-[380px] w-full border-0 sm:h-[460px]"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ------------------------------------------------------------------- rodapé */
 
 function Rodape() {
@@ -595,7 +603,7 @@ function BarraMobile() {
         href={CTA_FINAL}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex w-full items-center justify-center gap-3 bg-accent px-5 py-3.5 text-[15px] font-semibold text-accent-foreground"
+        className="cta-pulse flex w-full items-center justify-center gap-3 rounded-xl bg-accent px-5 py-3.5 text-[15px] font-semibold text-accent-foreground"
       >
         <WhatsAppIcon className="size-5" />
         Falar com um consultor

@@ -5,9 +5,11 @@ import type { CardItem } from "@/lib/site-data";
 type Props = {
   itens: CardItem[];
   ariaLabel: string;
+  tema?: "claro" | "escuro";
 };
 
-export function Carousel({ itens, ariaLabel }: Props) {
+export function Carousel({ itens, ariaLabel, tema = "claro" }: Props) {
+  const escuro = tema === "escuro";
   const trackRef = useRef<HTMLDivElement>(null);
   const [inicio, setInicio] = useState(true);
   const [fim, setFim] = useState(false);
@@ -47,7 +49,7 @@ export function Carousel({ itens, ariaLabel }: Props) {
             key={item.titulo}
             className="group w-[76vw] max-w-[320px] sm:w-[300px] lg:w-[326px]"
           >
-            <div className="relative overflow-hidden bg-secondary">
+            <div className="relative overflow-hidden rounded-xl bg-secondary">
               <img
                 src={item.imagem}
                 alt={item.titulo}
@@ -59,7 +61,11 @@ export function Carousel({ itens, ariaLabel }: Props) {
                 {item.titulo}
               </h3>
             </div>
-            <p className="mt-4 max-w-[30ch] text-sm leading-relaxed text-muted-foreground">
+            <p
+              className={`mt-4 max-w-[30ch] text-sm leading-relaxed ${
+                escuro ? "text-primary-foreground/65" : "text-muted-foreground"
+              }`}
+            >
               {item.descricao}
             </p>
           </article>
@@ -67,25 +73,30 @@ export function Carousel({ itens, ariaLabel }: Props) {
       </div>
 
       <div className="mt-8 flex items-center gap-3">
-        <button
-          type="button"
-          onClick={() => mover(-1)}
-          disabled={inicio}
-          aria-label="Ver itens anteriores"
-          className="flex size-11 items-center justify-center border border-border text-foreground transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-border disabled:hover:bg-transparent disabled:hover:text-foreground"
+        {([-1, 1] as const).map((direcao) => {
+          const Icone = direcao === -1 ? ChevronLeft : ChevronRight;
+          return (
+            <button
+              key={direcao}
+              type="button"
+              onClick={() => mover(direcao)}
+              disabled={direcao === -1 ? inicio : fim}
+              aria-label={direcao === -1 ? "Ver itens anteriores" : "Ver próximos itens"}
+              className={`flex size-11 items-center justify-center rounded-lg border transition-colors disabled:cursor-not-allowed disabled:opacity-30 ${
+                escuro
+                  ? "border-primary-foreground/30 text-primary-foreground hover:border-accent hover:bg-accent hover:text-accent-foreground disabled:hover:border-primary-foreground/30 disabled:hover:bg-transparent disabled:hover:text-primary-foreground"
+                  : "border-border text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground disabled:hover:border-border disabled:hover:bg-transparent disabled:hover:text-foreground"
+              }`}
+            >
+              <Icone className="size-5" strokeWidth={1.5} />
+            </button>
+          );
+        })}
+        <span
+          className={`ml-2 text-xs tracking-wide ${
+            escuro ? "text-primary-foreground/60" : "text-muted-foreground"
+          }`}
         >
-          <ChevronLeft className="size-5" strokeWidth={1.5} />
-        </button>
-        <button
-          type="button"
-          onClick={() => mover(1)}
-          disabled={fim}
-          aria-label="Ver próximos itens"
-          className="flex size-11 items-center justify-center border border-border text-foreground transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-border disabled:hover:bg-transparent disabled:hover:text-foreground"
-        >
-          <ChevronRight className="size-5" strokeWidth={1.5} />
-        </button>
-        <span className="ml-2 text-xs tracking-wide text-muted-foreground">
           Arraste para ver mais
         </span>
       </div>

@@ -191,3 +191,24 @@
     ),
     linear-gradient(180deg, var(--color-primary-deep), var(--color-ink));
 }
+
+/* CTA pulsante — realce sutil e contínuo nos botões de conversão */
+@utility cta-pulse {
+  animation: cta-pulse-anim 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@keyframes cta-pulse-anim {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 oklch(0.495 0.119 156.3 / 38%);
+  }
+  50% {
+    transform: scale(1.025);
+    box-shadow: 0 0 0 14px oklch(0.495 0.119 156.3 / 0%);
+  }
+}
