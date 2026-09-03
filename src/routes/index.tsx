@@ -14,7 +14,7 @@ import {
 import logo from "@/assets/pau-brasil-logo.png.asset.json";
 import logoBranco from "@/assets/pau-brasil-logo-branco.png.asset.json";
 import hero from "@/assets/hero-novo.asset.json";
-import mesaCentro from "@/assets/mesa_centro.asset.json";
+import bancosQuemSomos from "@/assets/bancos-madeira-quem-somos.webp.asset.json";
 import cobertura from "@/assets/coberturaservicos.asset.json";
 import { Carousel } from "@/components/site/Carousel";
 import { estruturas, faq, moveis, PHONE_DISPLAY, whatsappLink } from "@/lib/site-data";
