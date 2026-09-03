@@ -14,7 +14,7 @@ import {
 import logo from "@/assets/pau-brasil-logo.png.asset.json";
 import logoBranco from "@/assets/pau-brasil-logo-branco.png.asset.json";
 import hero from "@/assets/hero-novo.asset.json";
-import namoradeiraQuemSomos from "@/assets/namoradeira.asset.json";
+import outdoorPauBrasil from "@/assets/outdoor-pau-brasil.png.asset.json";
 import cobertura from "@/assets/coberturaservicos.asset.json";
 import { Carousel } from "@/components/site/Carousel";
 import { estruturas, faq, moveis, PHONE_DISPLAY, whatsappLink } from "@/lib/site-data";
