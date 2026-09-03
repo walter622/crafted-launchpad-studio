@@ -277,13 +277,9 @@ function Moveis() {
           <Carousel itens={moveis} ariaLabel="Móveis rústicos a pronta-entrega" />
         </div>
 
-        <div className="mt-14 flex flex-col gap-6 border-t border-border pt-10 sm:flex-row sm:items-center sm:justify-between">
-          <p className="max-w-[34rem] text-sm leading-relaxed text-muted-foreground">
-            <span className="font-medium text-foreground">Também no showroom:</span> sofás em couro
-            com estrutura em madeira maciça, cristaleiras e móveis para espaço gourmet.
-          </p>
+        <div className="mt-14 flex border-t border-border pt-10">
           <BotaoWhats href={CTA_MOVEIS} variante="light">
-            Receber fotos e medidas
+            Receber fotos e medidas do showroom
           </BotaoWhats>
         </div>
       </div>
