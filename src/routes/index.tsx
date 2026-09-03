@@ -14,7 +14,7 @@ import {
 import logo from "@/assets/pau-brasil-logo.png.asset.json";
 import logoBranco from "@/assets/pau-brasil-logo-branco.png.asset.json";
 import hero from "@/assets/hero-novo.asset.json";
-import mesaCentro from "@/assets/mesa_centro.asset.json";
+import bancosQuemSomos from "@/assets/bancos-madeira-quem-somos.webp.asset.json";
 import cobertura from "@/assets/coberturaservicos.asset.json";
 import { Carousel } from "@/components/site/Carousel";
 import { estruturas, faq, moveis, PHONE_DISPLAY, whatsappLink } from "@/lib/site-data";
@@ -359,12 +359,12 @@ function QuemSomos() {
   return (
     <section id="quem-somos" className="py-20 lg:py-28">
       <div className="mx-auto grid max-w-[1240px] items-center gap-14 px-5 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20 lg:px-10">
-        <div className="relative">
+      <div className="relative">
           <img
-            src={mesaCentro.url}
-            alt="Prancha orgânica em madeira nobre produzida pela Pau Brasil"
+            src={bancosQuemSomos.url}
+            alt="Bancos artesanais em madeira maciça no showroom da Pau Brasil"
             loading="lazy"
-            className="h-[420px] w-full object-cover sm:h-[520px]"
+            className="h-[420px] w-full object-cover object-center sm:h-[520px]"
           />
           <img
             src={cobertura.url}
