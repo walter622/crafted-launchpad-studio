@@ -357,8 +357,8 @@ function QuemSomos() {
       <div className="mx-auto grid max-w-[1240px] items-center gap-14 px-5 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20 lg:px-10">
       <div className="relative">
           <img
-            src={namoradeiraQuemSomos.url}
-            alt="Namoradeira em madeira maciça da Pau Brasil"
+            src={outdoorPauBrasil.url}
+            alt="Outdoor da Pau Brasil na Rodovia Castello Branco, Km 65, Mairinque SP"
             loading="lazy"
             className="h-[420px] w-full object-cover object-center sm:h-[520px]"
           />
